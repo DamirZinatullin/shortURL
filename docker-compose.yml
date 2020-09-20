@@ -1,0 +1,39 @@
+# Use root/root as user/password credentials
+version: "3.1"
+services:
+  app:
+    build: ./app
+    container_name: "Avito_Auto_App"
+    environment:
+      DB_HOST: mysql
+      DB_NAME: avito
+      DB_USER: flask
+      DB_PASSWORD: 1
+    links:
+      - mysql
+    depends_on:
+      - mysql
+    ports:
+      - 8000:8000
+
+  mysql:
+    image: mysql:latest
+    command: --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_0900_as_cs
+    container_name: "MySQL_Database"
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: avito
+      MYSQL_USER: flask
+      MYSQL_PASSWORD: 1
+    restart: always
+#    volumes:
+#    - ./db:/var/lib/mysql
+
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
