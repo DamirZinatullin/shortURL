@@ -4,7 +4,8 @@ from app import db
 import time
 
 
-
+def create_tables(db):
+    db.create_all()
 
 
 class URL(db.Model):
@@ -18,8 +19,3 @@ class URL(db.Model):
 
     def __repr__(self):
         return f'<URL id:{self.id}, short_URL: {self.short_url}, slug_URL:{self.slug_url}>'
-
-
-# time.sleep(30)
-print('I will crate database')
-db.create_all()
