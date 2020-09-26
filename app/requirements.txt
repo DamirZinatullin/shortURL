@@ -3,3 +3,4 @@ pymysql
 simplejson
 flask-sqlalchemy
 wtforms
+hashids
