@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+<div class="container" align="center">
+    <h1>
+        <h2>Сервис генерирования коротких ссылок</h2>
+    </h1>
+
+
+</div>
+
+<div class="container col-md-5" align="center">
+    <form action="{{ url_for('index') }}" method="POST">
+        <div class="form-group">
+            {{ form.source_url.label(class='control-label', text='Вставьте URL для получения короткой ссылки') }}
+            {{ form.source_url(class='form-control', type='url') }}
+            {{ form.human_readable.label(class='control-label', text='Введите описание для создания человекочитаемого
+            URL') }}
+            {{ form.human_readable(class='form-control', type='text', placeholder="Необязательное поле") }}
+            <!--                <label for="LongUrl">Вставьте URL</label>-->
+            <!--                <input type="url" class="form-control" id="LongUrl">-->
+        </div>
+        <button type="submit" class="btn btn-primary">Получить короткую ссылку</button>
+    </form>
+</div>
+
+</body>
+</html>
