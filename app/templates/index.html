@@ -19,8 +19,8 @@
 <div class="container col-md-5" align="center">
     <form action="{{ url_for('index') }}" method="POST">
         <div class="form-group">
-            {{ form.long_url.label(class='control-label', text='Вставьте URL для получения короткой ссылки') }}
-            {{ form.long_url(class='form-control', type='url') }}
+            {{ form.source_url.label(class='control-label', text='Вставьте URL для получения короткой ссылки') }}
+            {{ form.source_url(class='form-control', type='url') }}
             {{ form.human_readable.label(class='control-label', text='Введите описание для создания человекочитаемого
             URL') }}
             {{ form.human_readable(class='form-control', type='text', disabled=True) }}

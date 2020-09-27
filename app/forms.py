@@ -1,6 +1,7 @@
 from wtforms import Form, StringField, TextAreaField
+from wtforms.validators import URL
 
 
 class URLForm(Form):
-    long_url = StringField(id='long_url')
+    source_url = StringField(id='source_url', validators=[URL()])
     human_readable = StringField('human_readable')

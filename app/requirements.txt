@@ -4,3 +4,4 @@ simplejson
 flask-sqlalchemy
 wtforms
 hashids
+flask_validator

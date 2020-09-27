@@ -2,6 +2,7 @@ from app import app
 from app import db
 import sqlalchemy
 
+
 import time
 
 
@@ -11,7 +12,7 @@ def create_tables(db):
 
 class URLModel(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    long_url = db.Column(db.String(2048))
+    source_url = db.Column(db.String(2048))
     short_url = db.Column(db.String(30))
     friendly_url = db.Column(db.String(100))
 
