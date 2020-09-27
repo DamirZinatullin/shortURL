@@ -1,5 +1,5 @@
 from wtforms import Form, StringField, TextAreaField
-from wtforms.validators import URL
+from wtforms.validators import URL, InputRequired
 
 
 class URLForm(Form):

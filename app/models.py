@@ -13,8 +13,8 @@ def create_tables(db):
 class URLModel(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     source_url = db.Column(db.String(2048))
-    short_url = db.Column(db.String(30))
-    friendly_url = db.Column(db.String(100))
+    short_url = db.Column(db.String(100))
+    human_readable_url = db.Column(db.String(100))
 
     def __init__(self, *args, **kwargs):
         super(URLModel, self).__init__(*args, **kwargs)
